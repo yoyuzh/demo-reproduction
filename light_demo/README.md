@@ -7,9 +7,9 @@
 在本工作区根目录运行：
 
 ```bash
-rtk proxy uv venv --python python3.11 .venv
-rtk proxy uv pip install --python .venv/bin/python -r light_demo/requirements.txt
-rtk proxy .venv/bin/streamlit run light_demo/app.py --server.address 127.0.0.1 --server.port 8501 --browser.gatherUsageStats false
+uv venv --python python3.11 .venv
+uv pip install --python .venv/bin/python -r light_demo/requirements.txt
+.venv/bin/streamlit run light_demo/app.py --server.address 127.0.0.1 --server.port 8501 --browser.gatherUsageStats false
 ```
 
 打开 <http://127.0.0.1:8501>，选择案例并点击“开始定位配置错误”。默认启用**测试响应**，不请求 OpenAI；两个论文案例都可以走到报告。第三个案例明确标为测试用途，固定让图 3 验证失败，用于检查 `complete-flow`。这些测试解释是本地模拟文本，不代表论文或 OpenAI 的真实回答。
@@ -27,5 +27,5 @@ rtk proxy .venv/bin/streamlit run light_demo/app.py --server.address 127.0.0.1 -
 ## 自检
 
 ```bash
-rtk proxy .venv/bin/python -m unittest light_demo.test_core -v
+.venv/bin/python -m unittest light_demo.test_core -v
 ```
