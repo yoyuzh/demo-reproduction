@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+.serena/
+.qa_doc_render*/
+.DS_Store
+.env
+.env.*
+!.env.example
